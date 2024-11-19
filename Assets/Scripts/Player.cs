@@ -5,13 +5,12 @@ using UnityEngine;
 
 public class player : MonoBehaviour
 {
-    [SerializeField] private float speed;
-
-    private Rigidbody2D rb;
+    [SerializeField] private float _speed;
+    private Rigidbody2D _rb;
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+        _rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -19,6 +18,6 @@ public class player : MonoBehaviour
     {
         float horizontal = Input.GetAxisRaw("Horizontal");
 
-        rb.velocity = new Vector2(horizontal * speed,rb.velocity.y);
+        _rb.velocity = new Vector2(horizontal * _speed,_rb.velocity.y);
     }
 }

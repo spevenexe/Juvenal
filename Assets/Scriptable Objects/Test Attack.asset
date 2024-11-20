@@ -9,9 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: New Attack Card
+  m_Script: {fileID: 11500000, guid: 7e0ef17d0baf3ee48ab9c9c0b99b9c52, type: 3}
+  m_Name: Test Attack
   m_EditorClassIdentifier: Assembly-CSharp::AttackCard
-  _text: 
-  _title: 
-  _art: {fileID: 0}
+  _baseDamage: 2

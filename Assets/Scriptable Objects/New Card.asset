@@ -12,4 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 760cf9e08453c82418c4dc4a5fbee98f, type: 3}
   m_Name: New Card
   m_EditorClassIdentifier: 
-  _text: 
+  <Description>k__BackingField: This is Jeff
+  <CardName>k__BackingField: Jeff
+  <Art>k__BackingField: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
+  <Effect>k__BackingField: {fileID: 0}

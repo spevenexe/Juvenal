@@ -18,6 +18,6 @@ public class player : MonoBehaviour
     {
         float horizontal = Input.GetAxisRaw("Horizontal");
 
-        _rb.velocity = new Vector2(horizontal * _speed,_rb.velocity.y);
+        _rb.linearVelocity = new Vector2(horizontal * _speed,_rb.linearVelocity.y);
     }
 }

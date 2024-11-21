@@ -14,25 +14,9 @@ public class Card : ScriptableObject
         Debug.Log($"My name is {CardName}");
     }
 
-    List<CardEffect> _cardEffects;
-    List<Effect> Effects;
+    private CardEffect _cardEffect;
+    [field:SerializeField] public EffectAndParameters EffectAndParams {get; private set;}
     void OnEnable(){
-        _cardEffects = new List<CardEffect>();
-
-        foreach(Effect e in Effects){
-            EffectType type = e.effectType;
-            Parameters parameters = e.parameters;
-
-            CardEffect cardEffect = new AttackEffect(parameters); // this is just for defaults case, ignore this
-            switch(type){
-                case EffectType.Attack:
-                    cardEffect = new AttackEffect(parameters);
-                    break;
-                case EffectType.Draw:
-                    cardEffect = new DrawEffect(parameters);
-                    break;
-            }
-            _cardEffects.Add(cardEffect);
-        }
+        _cardEffect = CardEffect.GetCardEffect(EffectAndParams);
     }
 }

@@ -8,8 +8,9 @@ public class DrawEffect : CardEffect
 {
     [SerializeField] private int _numCards;
 
-    public DrawEffect(Parameters parameters) : base(parameters)
+    public DrawEffect(int numCards)
     {
+        _numCards = numCards;
     }
 
     public override void ApplyEffect()

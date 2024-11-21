@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 // NOTES
 // take care not to enter inheritance/component hell <<<<<<<<<<<<<<<< !
@@ -14,28 +15,47 @@ namespace Juvenal {
 
 public enum EffectType{
     Attack,
-    Draw
+    Draw,
+    Stacked
 }
 
 [Serializable]
-public struct Effect{
-    public EffectType effectType;
-    public Parameters parameters;
+public struct EffectAndParameters{
+    public EffectType EffectType;
+    public Parameters Parameters;
 }
 
 [Serializable]
 public struct Parameters{
-    public int numCards;
-    public float baseDamage;
+    public int NumCards;
+    public float BaseDamage;
+    public List<EffectAndParameters> EffectsAndParameters;
 }
 
 public class CardEffect
 {
-    protected Parameters _parameters; 
-
-    public CardEffect(Parameters parameters){
-        this._parameters = parameters;
+    public static CardEffect GetCardEffect(EffectAndParameters effectAndParameters){
+        EffectType type = effectAndParameters.EffectType;
+        Parameters parameters = effectAndParameters.Parameters;
+        switch(type){
+            case EffectType.Attack:
+                return new AttackEffect(parameters.BaseDamage);
+            case EffectType.Draw:
+                return new DrawEffect(parameters.NumCards);
+            case EffectType.Stacked:
+                return new StackedEffect(GetCardEffects(parameters.EffectsAndParameters));
+        }
+        return null;
     }
+
+    public static List<CardEffect> GetCardEffects(List<EffectAndParameters> effectsAndParameters){
+        List<CardEffect> effects = new List<CardEffect>();
+        foreach(EffectAndParameters effParams in effectsAndParameters){
+            effects.Append(GetCardEffect(effParams));
+        }
+        return effects;
+    }
+
 
     public virtual void ApplyEffect(){
         throw new NotImplementedException();

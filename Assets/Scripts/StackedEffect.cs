@@ -5,15 +5,18 @@ using Juvenal;
 // [CreateAssetMenu(menuName = "Effect/StackedEffects")]
 public class StackedEffect : CardEffect
 {
-    // [field:SerializeField] public List<CardEffect> Effects {get; private set;}
+    [SerializeField] private List<CardEffect> _effects;
 
-    // public override void ApplyEffect()
-    // {
-    //     foreach(CardEffect e in Effects){
-    //         e.ApplyEffect();
-    //     }
-    // }
-    public StackedEffect(Parameters parameters) : base(parameters)
+    public StackedEffect(List<CardEffect> effects)
     {
+        _effects = effects;
     }
+
+    public override void ApplyEffect()
+    {
+        foreach(CardEffect e in _effects){
+            e.ApplyEffect();
+        }
+    }
+    
 }

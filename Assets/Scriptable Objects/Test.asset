@@ -15,3 +15,19 @@ MonoBehaviour:
   <Description>k__BackingField: Throw another rock!
   <CardName>k__BackingField: Rock
   <Art>k__BackingField: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
+  <EffectAndParams>k__BackingField:
+    EffectType: 0
+    Parameters:
+      NumCards: 0
+      BaseDamage: 0
+      EffectsAndParameters:
+      - EffectType: 0
+        Parameters:
+          NumCards: 0
+          BaseDamage: 0
+          EffectsAndParameters: []
+      - EffectType: 1
+        Parameters:
+          NumCards: 0
+          BaseDamage: 0
+          EffectsAndParameters: []

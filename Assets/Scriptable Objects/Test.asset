@@ -10,9 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 760cf9e08453c82418c4dc4a5fbee98f, type: 3}
-  m_Name: New Card
+  m_Name: Test
   m_EditorClassIdentifier: 
-  <Description>k__BackingField: This is Jeff
-  <CardName>k__BackingField: Jeff
-  <Art>k__BackingField: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
-  <Effect>k__BackingField: {fileID: 0}
+  <Description>k__BackingField: Throw another rock!
+  <CardName>k__BackingField: Rock
+  <Art>k__BackingField: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}

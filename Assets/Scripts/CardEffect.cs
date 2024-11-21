@@ -1,5 +1,6 @@
+using System;
+using System.Collections.Generic;
 using UnityEngine;
-
 // NOTES
 // take care not to enter inheritance/component hell <<<<<<<<<<<<<<<< !
 // card effects can be composed of smaller card effects. 
@@ -9,9 +10,37 @@ using UnityEngine;
     // somtimes i might want to effects to have second gaps in between them. Like if i want a "Life Steal" effect to only trigger AFTER a hit confirmation, though again, this is probably better done as a subclass to "Attack"
     // perhaps create a hybrid system with await keywords that wait for a subset of effects to complete before moving on
 
-public class CardEffect : ScriptableObject
+namespace Juvenal {
+
+public enum EffectType{
+    Attack,
+    Draw
+}
+
+[Serializable]
+public struct Effect{
+    public EffectType effectType;
+    public Parameters parameters;
+}
+
+[Serializable]
+public struct Parameters{
+    public int numCards;
+    public float baseDamage;
+}
+
+public class CardEffect
 {
+    protected Parameters _parameters; 
+
+    public CardEffect(Parameters parameters){
+        this._parameters = parameters;
+    }
+
     public virtual void ApplyEffect(){
-        Debug.Log($"This is the base interface Effect.");
+        throw new NotImplementedException();
     }
 }
+
+}
+

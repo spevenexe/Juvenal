@@ -1,4 +1,5 @@
 using System;
+using Juvenal;
 using UnityEngine;
 
 public class CardDisplay : MonoBehaviour
@@ -13,7 +14,12 @@ public class CardDisplay : MonoBehaviour
     void Update()
     {
         if(Input.GetButtonDown("Interact")){
-            _card.ApplyEffect();
+            _card.Effect.ApplyEffect();
         }
+    }
+
+    public void TestApplyEffect()
+    {
+        _card.Effect.ApplyEffect();
     }
 }

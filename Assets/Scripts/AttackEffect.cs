@@ -8,10 +8,8 @@ public class AttackEffect : CardEffect
 {
     [SerializeField] private float _baseDamage;
 
-    public AttackEffect(float baseDamage)
+    public override void ApplyEffect()
     {
-        _baseDamage = baseDamage;
+        Debug.Log($"Me do {_baseDamage} damage.");
     }
-
-    public override void ApplyEffect(){/*do damage*/}
 }

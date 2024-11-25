@@ -1,16 +1,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Juvenal;
+using System;
 
-// [CreateAssetMenu(menuName = "Effect/StackedEffects")]
+[Serializable]
 public class StackedEffect : CardEffect
 {
-    [SerializeField] private List<CardEffect> _effects;
-
-    public StackedEffect(List<CardEffect> effects)
-    {
-        _effects = effects;
-    }
+    [SerializeReference, SubclassSelector] private List<CardEffect> _effects = new List<CardEffect>();
 
     public override void ApplyEffect()
     {

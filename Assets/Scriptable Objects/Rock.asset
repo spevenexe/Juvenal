@@ -9,11 +9,28 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6f80a088f49acf4388391514b387ee1, type: 3}
+  m_Script: {fileID: 11500000, guid: 760cf9e08453c82418c4dc4a5fbee98f, type: 3}
   m_Name: Rock
   m_EditorClassIdentifier: 
-  <Description>k__BackingField: 
-  <CardName>k__BackingField: 
-  <Art>k__BackingField: {fileID: 0}
-  _effect:
-    _baseDamage: 0
+  <Description>k__BackingField: Throw another rock!
+  <CardName>k__BackingField: Rock
+  <Art>k__BackingField: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
+  Effect:
+    rid: 6692601407473976259
+  references:
+    version: 2
+    RefIds:
+    - rid: 6692601407473976259
+      type: {class: StackedEffect, ns: , asm: Assembly-CSharp}
+      data:
+        _effects:
+        - rid: 6692601407473976260
+        - rid: 6692601407473976274
+    - rid: 6692601407473976260
+      type: {class: AttackEffect, ns: , asm: Assembly-CSharp}
+      data:
+        _baseDamage: 1
+    - rid: 6692601407473976274
+      type: {class: DrawEffect, ns: , asm: Assembly-CSharp}
+      data:
+        _numCards: 2

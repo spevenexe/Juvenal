@@ -31,6 +31,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Play Card 1",
+                    "type": "Button",
+                    "id": "64eacfa2-fccf-4422-94da-db076e66d867",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -97,6 +106,65 @@
                     "processors": "",
                     "groups": ";Keyboard and Mouse",
                     "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "39775e39-499b-49cb-8daf-7a5ccf7b8010",
+                    "path": "<Keyboard>/1",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard and Mouse",
+                    "action": "Play Card 1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "UI",
+            "id": "0214e8eb-285f-469c-a9e0-28915ffa0d1e",
+            "actions": [
+                {
+                    "name": "Play Card 1",
+                    "type": "Button",
+                    "id": "fd9694f3-cfa0-45c8-b0b1-7e05a73f53e3",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Play Card 2",
+                    "type": "PassThrough",
+                    "id": "5dbf3689-caae-4f34-afaf-fa150d6f7d3f",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "0b799614-d750-4892-a0f0-64e094a25980",
+                    "path": "<Keyboard>/1",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard and Mouse",
+                    "action": "Play Card 1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0a5210e1-1ba5-4e98-919d-1b6da71d8553",
+                    "path": "<Keyboard>/2",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard and Mouse",
+                    "action": "Play Card 2",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -2,20 +2,22 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
 
-public class CardUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+public class CardInHandUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     /// <summary>
     /// The amount to lift the card by.
     /// </summary>
-    private const float _LIFT_AMOUNT = 100f;
+    [SerializeField] private float _LIFT_AMOUNT = 100f;
     /// <summary>
     /// The speed at which to lift the card.
     /// </summary>
-    private const float _LERP_AMOUNT = 0.01f;
+    [SerializeField] private float _LERP_AMOUNT = 0.01f;
     private Coroutine cardLerpCoroutine;
 
     [SerializeField] public string Keybind;
+    [SerializeField] private InputActionReference _playCardInput;
     [SerializeField] private TMP_Text _keybind_text;
 
     public RectTransform RectTransform {get; private set;}
@@ -23,11 +25,22 @@ public class CardUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
     private Vector2 _originalPosition, _liftPosition;
 
+    void OnEnable()
+    {
+        _playCardInput.action.performed+=_card.PlayCard;
+    }
+
+    void OnDisable()
+    {
+        _playCardInput.action.performed-=_card.PlayCard;
+    }
+
     void Start()
     {
         RectTransform = GetComponent<RectTransform>();
         _card = GetComponent<CardDisplay>();
         _keybind_text.text = Keybind;
+        // _keybind_text.text = _playCardInput.action.bindings[0].action;
         _originalPosition = RectTransform.anchoredPosition;
         _liftPosition = _originalPosition + Vector2.up * _LIFT_AMOUNT;
     }

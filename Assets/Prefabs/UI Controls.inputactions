@@ -1,0 +1,51 @@
+{
+    "name": "UI Controls",
+    "maps": [
+        {
+            "name": "Default",
+            "id": "46f4b5c0-c968-4e62-99ef-92bb4c86ae43",
+            "actions": [
+                {
+                    "name": "PlayCard1",
+                    "type": "Button",
+                    "id": "c79403ab-663b-45d3-bbed-69f164879a8d",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "7ce5f384-f1a6-433b-be26-af47a72c125f",
+                    "path": "<Keyboard>/1",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PlayCard1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": [
+        {
+            "name": "Keyboard and Mouse",
+            "bindingGroup": "Keyboard and Mouse",
+            "devices": [
+                {
+                    "devicePath": "<Keyboard>",
+                    "isOptional": false,
+                    "isOR": false
+                },
+                {
+                    "devicePath": "<Mouse>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        }
+    ]
+}

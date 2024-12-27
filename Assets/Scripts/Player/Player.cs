@@ -4,18 +4,23 @@ using UnityEngine.InputSystem;
 public class Player : MonoBehaviour
 {
     private PlayerMovement _playerMovement; 
+    [SerializeField] private CardDisplay _cardInHand;
 
-    [SerializeField] private InputActionReference _movementInput, _talk, _jump; 
+    [SerializeField] private InputActionReference _movementInput, _talk, _jump;
+    // [SerializeField] private InputActionReference _playCard; 
 
     void OnEnable()
     {
         _talk.action.performed+=Talk;
         _jump.action.performed+=Jump;
+        // _playCard.action.performed+=_cardInHand.PlayCard;
     }
 
     void OnDisable()
     {
         _talk.action.performed-=Talk;
+        _jump.action.performed-=Jump;
+        // _playCard.action.performed-=_cardInHand.PlayCard;
     }
 
     void Start()
